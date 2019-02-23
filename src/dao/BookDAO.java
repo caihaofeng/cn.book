@@ -33,7 +33,7 @@ public class BookDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return list;//test
 	}
 	
 	public boolean addBook(Book book) {
