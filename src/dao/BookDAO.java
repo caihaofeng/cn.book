@@ -59,7 +59,7 @@ public class BookDAO {
 	
 	public boolean deleteBook(int id) {
 		String  sql ="delete from book where id=?";
-		Connection conn = DbHelper.getConnection();?//获取数据库连接
+		Connection conn = DbHelper.getConnection();//获取数据库连接
 		try {
 			PreparedStatement pst =conn.prepareStatement(sql);
 			pst.setInt(1, id);
