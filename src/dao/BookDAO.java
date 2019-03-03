@@ -27,8 +27,8 @@ public class BookDAO {
 				book.setCategory(rst.getString("category"));
 				list.add(book);
 			}
-			rst.close(); // �ر�
-			pst.close(); // �ر�
+			rst.close(); // 关闭
+			pst.close(); // 关闭
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -46,7 +46,7 @@ public class BookDAO {
 			pst.setString(3, book.getAuthor());
 			pst.setString(4, book.getCategory());
 			pst.executeUpdate();	
-			pst.close(); // �ر�
+			pst.close(); // 关闭
 		} 
 		
 		catch (SQLException e) {
@@ -59,12 +59,12 @@ public class BookDAO {
 	
 	public boolean deleteBook(int id) {
 		String  sql ="delete from book where id=?";
-		Connection conn = DbHelper.getConnection();
+		Connection conn = DbHelper.getConnection();?//获取数据库连接
 		try {
 			PreparedStatement pst =conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			pst.executeUpdate();
-			pst.close(); // �ر�
+			pst.close(); // 关闭
 		} catch (SQLException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -83,7 +83,7 @@ public class BookDAO {
 			pst.setString(3, book.getCategory());
 			pst.setInt(4, book.getId());
 			pst.executeUpdate();
-			pst.close(); // �ر�
+			pst.close(); // 关闭
 			
 		} catch (SQLException e) {
 			// TODO: handle exception
@@ -111,7 +111,7 @@ public class BookDAO {
 				book.setCategory(rst.getString("category"));
 				list.add(book);
 			}
-			pst.close(); // �ر�
+			pst.close(); // 关闭
 			rst.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
